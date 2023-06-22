@@ -10,6 +10,9 @@ html {
 }
 body {
   background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 header {
   display: flex;
@@ -18,9 +21,64 @@ header {
   height: 70px;
   background-color: orange;
 }
+.header {
+  display: block;
+  width: 100%;
+}
 .container {
   text-align: center;
   margin-top: 60px;
+}
+/******Text animations*******/
+.wrapper {
+  color: #fff;
+  display: inline-flex;
+}
+.wrapper .static-txt {
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  height: 75px;
+  line-height: 75px;
+  overflow: hidden;
+}
+
+.dynamic-txts li {
+  list-style: none;
+  font-size: 60px;
+  font-weight: 500;
+  color: #fc6d6d;
+  position: relative;
+  top: 0;
+  animation: slide 10s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -300px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+}
+.dynamic-txts li span::after {
+  content: "";
+  background: #000;
+  position: absolute;
+  height: 102%;
+  width: 100%;
+  top: 3px;
+  left: 0;
+  border-left: 2px solid #fc6d6d;
+  animation: typing 2.5s steps(12) infinite;
+}
+@keyframes typing {
+  100% {
+    left: 100%;
+    width: 0%;
+    margin: 0 -35px 0 35px;
+  }
 }
 /*****MANU toggle button*****/
 .toggle {
@@ -51,7 +109,7 @@ header {
   transform: translatey(-15px);
 }
 .toggle.active span:nth-child(1) {
-  transform: translatey(0px) rotate(45deg);
+  transform: translatey(0px) rotate(-315deg);
   transition-delay: 0.15s;
 }
 
@@ -204,8 +262,8 @@ section p {
   z-index: -1;
 }
 .circular:hover::before {
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
+  top: -2px;
+  left: -2px;
+  height: 45px;
+  width: 45px;
 }
