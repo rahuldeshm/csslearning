@@ -12,6 +12,7 @@ body {
   background-color: #000;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 header {
@@ -28,6 +29,76 @@ header {
 .container {
   text-align: center;
   margin-top: 60px;
+}
+.img {
+  width: 50%;
+  text-align: center;
+}
+.img img {
+  width: 20rem;
+}
+/******Alert*******/
+.alert {
+  font-family: monospace;
+  font-size: 20px;
+  background-color: #ffdb9b;
+  padding: 20px 40px;
+  position: fixed;
+  right: 19px;
+  top: 4.5rem;
+  border-radius: 4px;
+  border-left: 9px solid #ffa502;
+}
+/* forwards insures that the element retains the computed values fro the last key fram after the animation finishes
+*/
+.alert.show {
+  animation: show_slide 1s ease-in-out;
+}
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-15%);
+  }
+  80% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.iconi {
+  border: 1px solid salmon;
+  position: absolute;
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  top: 50%;
+  left: 15px;
+  border-radius: 50%;
+  background-color: #ffa502;
+  transform: translatey(-50%);
+  font-size: 30px;
+}
+.msg {
+  color: #ce8500;
+  padding: 0 20px;
+}
+.close-btn {
+  background: #ffd080;
+  position: absolute;
+  padding: 15px 18px;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background-color: #ffc766;
+}
+.xicon {
+  color: #ce8500;
+  font-size: 28px;
 }
 /******Text animations*******/
 .wrapper {
